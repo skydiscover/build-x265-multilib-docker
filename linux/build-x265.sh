@@ -37,7 +37,7 @@ NBCORES=$(cat /proc/cpuinfo | grep proc | wc -l)
 hg clone -b "${CLONE_BRANCH}" "${CLONE_URL}"
 cd x265/build/linux
 
-if [ "${MAIN_LIB_STATIC}" = 'ENABLED'] ; then
+if [ "${MAIN_LIB_STATIC}" = 'ENABLED' ] ; then
   cmake -G "Unix Makefiles" ../../source -DENABLE_SHARED=OFF -DENABLE_CLI=OFF
   make -j ${NBCORES}
   cp libx265.a /output/x265_main.a
@@ -53,7 +53,7 @@ if [ "${MAIN_CLI}" = 'ENABLED' ] ; then
   make -j ${NBCORES}
   cp x265 /output/x265_main
 fi
-if [ "${MAIN10_LIB_STATIC}" = 'ENABLED'] ; then
+if [ "${MAIN10_LIB_STATIC}" = 'ENABLED' ] ; then
   cmake -G "Unix Makefiles" ../../source -DENABLE_SHARED=OFF -DENABLE_CLI=OFF -DHIGH_BIT_DEPTH=ON -DMAIN12=OFF
   make -j ${NBCORES}
   cp libx265.a /output/x265_main.a
@@ -68,7 +68,7 @@ if [ "${MAIN10_CLI}" = 'ENABLED' ] ; then
   make -j ${NBCORES}
   cp x265 /output/x265_main
 fi
-if [ "${MAIN12_LIB_STATIC}" = 'ENABLED'] ; then
+if [ "${MAIN12_LIB_STATIC}" = 'ENABLED' ] ; then
   cmake -G "Unix Makefiles" ../../source -DENABLE_SHARED=OFF -DENABLE_CLI=OFF -DHIGH_BIT_DEPTH=ON -DMAIN12=ON
   make -j ${NBCORES}
   cp libx265.a /output/x265_main.a

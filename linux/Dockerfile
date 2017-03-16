@@ -1,5 +1,7 @@
 FROM alpine:latest
 
+WORKDIR /build
+
 ENV CLONE_URL=https://bitbucket.org/multicoreware/x265 \
     CLONE_BRANCH=stable \
     MAIN_CLI=DISABLED \
@@ -21,5 +23,5 @@ RUN mkdir /output && \
       yasm
       
 VOLUME /output
-COPY ./build-x265.sh /
-ENTRYPOINT ["/build-x265.sh"]
+COPY ./build-x265.sh .
+ENTRYPOINT ["./build-x265.sh"]
