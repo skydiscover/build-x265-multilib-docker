@@ -2,6 +2,7 @@ X265 builder container
 ======================
 
 This project prepares a docker image ready for x265 compilation, inspired by [MasashiTeruya' x265 building container](https://github.com/MasashiTeruya/build-x265-docker)
+There is also a cross-compiling version, with tag `win64` in progress, but I am stuck, and cannot cross-compile the cli version of x265...
 
 How to use it
 -------------
@@ -55,6 +56,7 @@ No suffix is added for multilib libraries.
 Contribute
 ----------
 
-Since I am not really a compilation guru, I was not able to generate a multilib executable. Any help will be appreciated.
+Since I am not really a compilation guru, I was not able to generate a multilib executable for linux. Any help will be appreciated.
+Add because I am quite useless when itcomes to cross-compiling, I am not able to make the cross-compiling version to work, pls halp.
 
 
