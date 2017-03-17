@@ -56,33 +56,33 @@ fi
 if [ "${MAIN10_LIB_STATIC}" = 'ENABLED' ] ; then
   cmake -G "Unix Makefiles" ../../source -DENABLE_SHARED=OFF -DENABLE_CLI=OFF -DHIGH_BIT_DEPTH=ON -DMAIN12=OFF
   make -j ${NBCORES}
-  cp libx265.a /output/x265_main.a
+  cp libx265.a /output/x265_main10.a
 fi
 if [ "${MAIN10_LIB_SHARED}" = 'ENABLED' ] ; then
   cmake -G "Unix Makefiles" ../../source -DENABLE_SHARED=ON -DENABLE_CLI=OFF -DHIGH_BIT_DEPTH=ON -DMAIN12=OFF
   make -j ${NBCORES}
-  cp libx265.so /output/x265_main.so
+  cp libx265.so /output/x265_main10.so
 fi
 if [ "${MAIN10_CLI}" = 'ENABLED' ] ; then
   cmake -G "Unix Makefiles" ../../source -DENABLE_SHARED=OFF -DENABLE_CLI=ON -DHIGH_BIT_DEPTH=ON -DMAIN12=OFF
   make -j ${NBCORES}
-  cp x265 /output/x265_main
+  cp x265 /output/x265_main10
 fi
 if [ "${MAIN12_LIB_STATIC}" = 'ENABLED' ] ; then
   cmake -G "Unix Makefiles" ../../source -DENABLE_SHARED=OFF -DENABLE_CLI=OFF -DHIGH_BIT_DEPTH=ON -DMAIN12=ON
   make -j ${NBCORES}
-  cp libx265.a /output/x265_main.a
+  cp libx265.a /output/x265_main12.a
 fi
 if [ "${MAIN12_LIB_SHARED}" = 'ENABLED' ] ; then
   cmake -G "Unix Makefiles" ../../source -DENABLE_SHARED=ON -DENABLE_CLI=OFF -DHIGH_BIT_DEPTH=ON -DMAIN12=ON
   make -j ${NBCORES}
-  cp libx265.so /output/x265_main.so
+  cp libx265.so /output/x265_main12.so
 fi
 if [ "${MAIN12_CLI}" = 'ENABLED' ] ; then
   echo ""
   cmake -G "Unix Makefiles" ../../source -DENABLE_SHARED=OFF -DENABLE_CLI=ON -DHIGH_BIT_DEPTH=ON -DMAIN12=ON
   make -j ${NBCORES}
-  cp x265 /output/x265_main
+  cp x265 /output/x265_main12
 fi
 if [ "${MULTI_LIB_STATIC}" = 'ENABLED' ] ; then
   MAKEFLAGS="-j ${NBCORES}"
