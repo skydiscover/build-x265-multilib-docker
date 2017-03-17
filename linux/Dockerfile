@@ -18,8 +18,8 @@ ENV CLONE_URL=https://bitbucket.org/multicoreware/x265 \
 RUN mkdir /output && \
     apk --update add \
       build-base \
-      mercurial \
       cmake \
+      mercurial \
       yasm
       
 VOLUME /output
